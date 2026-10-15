@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "EMIS Keep-Alive",
+  "version": "1.0.0",
+  "description": "Stops emis.ibsu.edu.ge from logging you out after 5 minutes of inactivity. For personal devices only.",
+  "content_scripts": [
+    {
+      "matches": ["https://emis.ibsu.edu.ge/*"],
+      "js": ["keepalive.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "emis-keepalive@personal.local",
+      "strict_min_version": "128.0"
+    }
+  }
+}
